@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS-LOCK-lib</title>
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+  <div class="container">
+    <div class="wrapper">
+      <span class="title">Just resize!</span>
+    </div>
+  </div>
+  <div class="container container-1">
+    <div class="one item">
+      <div class="one-wrapper">
+        <div class="one-item blue-bg">
+          1
+        </div>
+        <div class="one-item light-blue-bg">
+          2
+        </div>
+      </div>
+      <div class="description">
+        <span class="description-text">Size of the items change from 450px to 50px</span>
+        <div class="description-snippet">
+          <div class="description-snippet-sass">
+            <span class="orange">.item</span> {<br>
+            <span class="purple ml-10">@include</span> <span class="blue">cssLock</span>(<span class="green">'width'</span>, <span>320</span>, <span class="orange">1000</span>, (<span class="orange">50</span> <span class="orange">450</span>));<br>}
+            <div class="description-snippet-sass-lang">SaSS</div>
+          </div>
+          <div class="description-snippet-css">
+            <span class="orange">.item</span> {<br>
+            <span class="ml-10">width:</span> <span class="blue">calc</span>(<span class="orange">58.8vw</span> + <span class="orange">-138.2px</span>);<br>}
+            <div class="description-snippet-css-lang">CSS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container container-2">
+    <div class="two item">
+      <div class="two-item">
+        Text's font-size changes from 72px to 18px
+      </div>
+      <div class="description-snippet">
+        <div class="description-snippet-sass">
+          <span class="orange">.item</span> {<br>
+            <span class="purple ml-10">@include</span> <span class="blue">cssLock</span>(<span class="green">'font-size'</span>, <span>320</span>, <span class="orange">1000</span>, (<span class="orange">18</span> <span class="orange">72</span>));<br>}
+            <div class="description-snippet-sass-lang">SaSS</div>
+        </div>
+        <div class="description-snippet-css">
+          <span class="orange">.item</span> {<br>
+          <span class="ml-10">font-size:</span> <span class="blue">calc</span>(<span class="orange">7.9vw</span> + <span class="orange">-7.4px</span>);<br>}
+          <div class="description-snippet-css-lang">CSS</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

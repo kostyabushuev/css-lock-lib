@@ -1,0 +1,162 @@
+@import "_css-lock";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+span {
+  display: inline-block;
+}
+
+.container {
+  padding-left: calc(50% - 500px);
+  padding-right: calc(50% - 500px);
+  font-size: 40px;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 700;
+
+  &-1 {
+    background-color: rgba(240,183,117,.5);
+  }
+
+  &-2 {
+    background-color: rgba(247,89,64,.5);
+  }
+}
+
+.wrapper {
+  text-align: center;
+}
+
+.title {
+  display: inline-block;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 350px;
+  padding: 10px;
+  font-size: 55px;
+  color: #6abe83;
+  border: 3px solid #6abe83;
+  text-align: center;
+}
+
+.description {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #333;
+
+  &-text {
+    display: block;
+    font-size: 18px;
+  }
+
+  &-snippet {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 400;
+
+    &-sass {
+      position: relative;
+      margin-bottom: 15px;
+      padding: 15px;
+      background: #ddd;
+      border: 1px solid #FF82A9;
+
+      &-lang {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-weight: 700;
+        color: #FF82A9;
+      }
+    }
+
+    &-css {
+      position: relative;
+      padding: 15px;
+      background: #ddd;
+      border: 1px solid #1B6AA5;
+
+      &-lang {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-weight: 700;
+        color: #1B6AA5;
+      }
+    }
+
+    pre {
+      margin: 0;
+    }
+  }
+}
+
+.blue-bg {
+  background-color: #0000A1;
+}
+
+.light-blue-bg {
+  background-color: #39BAE8;
+}
+
+.orange {
+  color: #F78D3F;
+}
+
+.purple {
+  color: #791E94;
+}
+
+.blue {
+  color: #0000A1;
+}
+
+.green {
+  color: #7ebc59;
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+.item {
+  padding: 30px 15px;
+}
+
+.one {
+  &-wrapper {
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-item {
+    padding: 10px;
+    min-height: 100px;
+
+    @include cssLock('width', 320, 1000, (50 450));
+
+    @media (min-width: 1000px) {
+      width: 450px;
+    }
+  }
+}
+
+.two {
+  &-item {
+    padding: 10px;
+    width: 100%;
+
+    @include cssLock('font-size', 320, 1000, (18 72));
+
+    @media (min-width: 1000px) {
+      font-size: 72px;
+    }
+  }
+}

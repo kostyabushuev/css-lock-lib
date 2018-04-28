@@ -1,0 +1,24 @@
+/*
+$y1 - min width / height of screen
+$y2 - max width / height of screen
+$x1 - min value of property
+$x2 - max value of property
+*/
+
+@function _getValue ($y1, $y2, $x1, $x2, $x:100vw) {
+  /*
+  ** y = mx + b
+  **
+  ** m = font_size_increase / viewport_increase
+  ** m = m = (y2 - y1) / (x2 - x1)
+  **
+  ** b = y1 - m * x1
+  **
+  ** X = 100vw or 100vh
+  */
+
+  $m: ($y2 - $y1) / ($x2 - $x1);
+  $b: $y1 - $m * $x1;
+
+  @return calc(#{$m * $x + ' + ' + $b + 'px'});
+}

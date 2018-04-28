@@ -1,0 +1,39 @@
+@import "_get-value";
+
+@mixin cssLock ($property, $minWidth, $maxWidth,
+                   $values_1: false,
+                   $values_2: (false false),
+                   $values_3: (false false),
+                   $values_4: (false false),
+                   $x: 100vw) {
+
+  $x1: $minWidth;
+  $x2: $maxWidth;
+
+  $y1_1: nth($values_1, 1);
+  $y2_2: nth($values_1, 2);
+
+  $y1_3: nth($values_2, 1);
+  $y2_4: nth($values_2, 2);
+
+  $y1_5: nth($values_3, 1);
+  $y2_6: nth($values_3, 2);
+
+  $y1_7: nth($values_4, 1);
+  $y2_8: nth($values_4, 2);
+
+  $stringCulc: '';
+
+  #{$property}: if($y1_7, _getValue($y1_1, $y2_2, $minWidth, $maxWidth)
+                    _getValue($y1_3, $y2_4, $minWidth, $maxWidth)
+                    _getValue($y1_5, $y2_6, $minWidth, $maxWidth)
+                    _getValue($y1_7, $y2_8, $minWidth, $maxWidth),
+                  if($y1_5, _getValue($y1_1, $y2_2, $minWidth, $maxWidth)
+                            _getValue($y1_3, $y2_4, $minWidth, $maxWidth)
+                            _getValue($y1_5, $y2_6, $minWidth, $maxWidth),
+                    if($y1_3, _getValue($y1_1, $y2_2, $minWidth, $maxWidth) _getValue($y1_3, $y2_4, $minWidth, $maxWidth),
+                                _getValue($y1_1, $y2_2, $minWidth, $maxWidth)
+                    )
+                  )
+                )
+}
