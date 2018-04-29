@@ -4,11 +4,7 @@
                    $values_1: false,
                    $values_2: (false false),
                    $values_3: (false false),
-                   $values_4: (false false),
-                   $x: 100vw) {
-
-  $x1: $minWidth;
-  $x2: $maxWidth;
+                   $values_4: (false false)) {
 
   $y1_1: nth($values_1, 1);
   $y2_2: nth($values_1, 2);

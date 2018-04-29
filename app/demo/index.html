@@ -44,7 +44,7 @@
   <div class="container container-2">
     <div class="two item">
       <div class="two-item">
-        Text's font-size changes from 72px to 18px
+        Font-size changes from 72px to 18px
       </div>
       <div class="description-snippet">
         <div class="description-snippet-sass">
@@ -56,6 +56,31 @@
           <span class="orange">.item</span> {<br>
           <span class="ml-10">font-size:</span> <span class="blue">calc</span>(<span class="orange">7.9vw</span> + <span class="orange">-7.4px</span>);<br>}
           <div class="description-snippet-css-lang">CSS</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container container-3">
+    <div class="three item">
+      <div class="three-item black-bg three-item three-item-first">
+        1
+      </div>
+      <div class="three-item green-light-bg">
+        2
+      </div>
+      <div class="description">
+        <span class="description-text">Margin-bottom first element changes from 30px to 10px</span>
+        <div class="description-snippet">
+          <div class="description-snippet-sass">
+            <span class="orange">.item</span> {<br>
+            <span class="purple ml-10">@include</span> <span class="blue">cssLock</span>(<span class="green">'margin-bottom'</span>, <span>320</span>, <span class="orange">1000</span>, (<span class="orange">10</span> <span class="orange">30</span>));<br>}
+            <div class="description-snippet-sass-lang">SaSS</div>
+          </div>
+          <div class="description-snippet-css">
+            <span class="orange">.item</span> {<br>
+            <span class="ml-10">width:</span> <span class="blue">calc</span>(<span class="orange">2.9vw</span> + <span class="orange">0.5px</span>);<br>}
+            <div class="description-snippet-css-lang">CSS</div>
+          </div>
         </div>
       </div>
     </div>

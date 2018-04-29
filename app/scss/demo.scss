@@ -27,6 +27,10 @@ span {
   &-2 {
     background-color: rgba(247,89,64,.5);
   }
+
+  &-3 {
+    background-color: rgba(236,119,0,.5);
+  }
 }
 
 .wrapper {
@@ -105,6 +109,14 @@ span {
   background-color: #39BAE8;
 }
 
+.black-bg {
+  background-color: #393E46;
+}
+
+.green-light-bg {
+  background-color: #5BE7C4;
+}
+
 .orange {
   color: #F78D3F;
 }
@@ -157,6 +169,22 @@ span {
 
     @media (min-width: 1000px) {
       font-size: 72px;
+    }
+  }
+}
+
+.three {
+  &-item {
+    color: #fff;
+    padding: 10px;
+    min-height: 100px;
+
+    &-first {
+      @include cssLock('margin-bottom', 320, 1000, (10 30));
+
+      @media (min-width: 1000px) {
+        margin-bottom: 30px;
+      }
     }
   }
 }
