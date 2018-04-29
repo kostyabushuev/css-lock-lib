@@ -1,24 +1,33 @@
 /*
 $y1 - min width / height of screen
 $y2 - max width / height of screen
-$x1 - min value of property
-$x2 - max value of property
+$min_w - min value of property
+$max_w - max value of property
 */
 
-@function _getValue ($y1, $y2, $x1, $x2, $x:100vw) {
+@function _getValue ($min_v, $max_v, $min_w, $max_w, $x:100vw) {
   /*
   ** y = mx + b
   **
   ** m = font_size_increase / viewport_increase
-  ** m = m = (y2 - y1) / (x2 - x1)
+  ** m = m = (max_v - min_v) / (max_w - min_w)
   **
-  ** b = y1 - m * x1
+  ** b = min_v - m * min_w
   **
   ** X = 100vw or 100vh
   */
 
-  $m: ($y2 - $y1) / ($x2 - $x1);
-  $b: $y1 - $m * $x1;
+  // if some value is auto return auto
+  @if $min_v == 'auto' {@return auto};
+
+  // if min value is false, return empty string
+  @if $min_v == false {@return #{''}};
+
+  // if min and max values is equal return the value
+  @if $min_v == $max_v {@return #{$min_v + 'px'}};
+
+  $m: ($max_v - $min_v) / ($max_w - $min_w);
+  $b: $min_v - $m * $min_w;
 
   @return calc(#{$m * $x + ' + ' + $b + 'px'});
 }

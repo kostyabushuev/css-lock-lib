@@ -1,0 +1,51 @@
+/**
+* @param $p - property
+* */
+
+@function _getNameOfProperty($p) {
+  @if $p == 'm' {@return 'margin'};
+
+  @if $p == 'mt' {@return 'margin-top'};
+
+  @if $p == 'mb' {@return 'margin-bottom'};
+
+  @if $p == 'ml' {@return 'margin-left'};
+
+  @if $p == 'mr' {@return 'margin-right'};
+
+  @if $p == 'p' {@return 'padding'};
+
+  @if $p == 'pt' {@return 'padding-top'};
+
+  @if $p == 'pb' {@return 'padding-bottom'};
+
+  @if $p == 'pl' {@return 'padding-left'};
+
+  @if $p == 'pr' {@return 'padding-right'};
+
+  @if $p == 'fz' {@return 'font-size'};
+
+  @if $p == 'lh' {@return 'line-height'};
+
+  @if $p == 'w' {@return 'width'};
+
+  @if $p == 'mw' {@return 'min-width'};
+
+  @if $p == 'maxw' {@return 'max-width'};
+
+  @if $p == 'h' {@return 'height'};
+
+  @if $p == 'mh' {@return 'min-height'};
+
+  @if $p == 'maxh' {@return 'max-height'};
+
+  @if $p == 't' {@return 'top'};
+
+  @if $p == 'b' {@return 'bottom'};
+
+  @if $p == 'l' {@return 'left'};
+
+  @if $p == 'r' {@return 'right'};
+
+  @return $p
+}

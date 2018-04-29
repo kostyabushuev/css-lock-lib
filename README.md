@@ -1,11 +1,10 @@
 # CSS-LOCK-lib
 
+### Description
 
-#### Description
+It is small scss-mixins library for more adaptive. If you don't know what's css-lock, you can read article by Florens Verschelde [The math of CSS locks](https://fvsch.com/code/css-locks/). At the moment the library works only with unit `vw`. [**LIVE EXAMPLE**](https://raydmend.github.io/css-lock/)
 
-It is small scss-mixins library for more adaptive. If you don't kwo what's css-lock, you can read article by Florens Verschelde [The math of CSS locks](https://fvsch.com/code/css-locks/). At the moment the library works only with unit `vw`. [**LIVE EXAMPLE**](https://raydmend.github.io/css-lock/)
-
-#### Get started!
+### Get started!
 
 For use the scss-mixins you can download the scss folder and include in your project main mixin is called `@import '_css-lock.scss'`
 
@@ -13,20 +12,20 @@ EXAMPLE:
 
 You want to change your font-size from 72px to 18px on screens from 1000px to 320px. You must do next.
 
-Your SaSS-code:
+**SCSS:**
 
 ```scss
 @import '_css-lock.scss';
 
 .item {
-	@include cssLock('font-size', 320, 1000, (18 72));
+ @include cssLock('font-size', 320, 1000, (18 72));
 }
 ```
-Your compiled css-code:
+**CSS:**
 
 ```css
 .item {
-	font-size: calc(7.94118vw + -7.41176px);
+ font-size: calc(7.94118vw + -7.41176px);
 }
 ```
 
@@ -44,6 +43,10 @@ Main ScSS mixins looks like as:
 * */
 
 @include cssLock('$property', $minW, $maxW, ($minV $maxV));
+
+Also, you can use some values, for example, margin or padding:
+
+@include cssLock('$property', $minW, $maxW, ($minV $maxV) ($minV $maxV) ($minV $maxV) ($minV $maxV));
 ```
 You can use only css-property `($property)` which are calculated in pixels. List of the property:
 * margin
@@ -57,3 +60,92 @@ You can use only css-property `($property)` which are calculated in pixels. List
 * width / height
 * max-width / max-height
 * min-width / min-height
+
+### Value is auto
+
+The mixins supports to use value auto. For example
+
+**SCSS:**
+
+```scss
+@import '_css-lock.scss';
+
+.item {
+ @include cssLock('maring-left', 320, 1000, (auto auto));
+}
+```
+**CSS:**
+
+```css
+.item {
+ maring-left: auto;
+}
+```
+
+### Value is const
+The mixins supports to use const. For example
+
+**SCSS:**
+
+```scss
+@import '_css-lock.scss';
+
+.item {
+ @include cssLock('margin', 320, 1000, (30 30), (auto auto), (10 25));
+}
+```
+**CSS:**
+
+```css
+.item {
+ margin: 30px auto calc(2.2vw + 2.9px);
+}
+```
+
+### For lovers Emmet
+
+If you use plugin emmet you like write, for example, `fz` --> put `Tab` --> and get `font-size`. The sass-mixins has shortened property values for more speed development.
+
+Example:
+
+**SCSS:**
+
+```scss
+@import '_css-lock.scss';
+
+.item {
+ @include cssLock('m', 320, 1000, (30 30), (auto auto));
+}
+```
+**CSS:**
+
+```css
+.item {
+ margin: 30px auto;
+}
+```
+
+| Write         | Get              |
+| :-----------: | :-------------:  |
+| `m`           | `margin`         |
+| `mr`          | `margin-right`   |
+| `ml`          | `margin-left`    |
+| `mt`          | `margin-top`     |
+| `mb`          | `margin-bottom`  |
+| `p`           | `padding`        |
+| `pr`          | `padding-right`  |
+| `pl`          | `padding-left`   |
+| `pt`          | `padding-top`    |
+| `pb`          | `padding-bottom` |
+| `fz`          | `font-size`      |
+| `lh`          | `line-height`    |
+| `w`           | `width`          |
+| `mw`          | `min-width`      |
+| `maxw`        | `max-width`      |
+| `h`           | `height`         |
+| `mh`          | `min-height`     |
+| `mah`         | `max-height`     |
+| `t`           | `top`            |
+| `b`           | `bottom`         |
+| `l`           | `left`           |
+| `r`           | `right`          |
