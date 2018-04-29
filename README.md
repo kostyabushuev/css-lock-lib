@@ -1,8 +1,9 @@
 # CSS-LOCK-lib
 
+
 #### Description
 
-It is small scss-mixins library for more adaptive. If you don't kwo what's css-lock, you can read article by Florens Verschelde [The math of CSS locks](https://fvsch.com/code/css-locks/). At the moment the library works only with unit `vw`.
+It is small scss-mixins library for more adaptive. If you don't kwo what's css-lock, you can read article by Florens Verschelde [The math of CSS locks](https://fvsch.com/code/css-locks/). At the moment the library works only with unit `vw`. [**LIVE EXAMPLE**](https://raydmend.github.io/css-lock/)
 
 #### Get started!
 
