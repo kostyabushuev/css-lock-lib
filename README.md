@@ -2,7 +2,7 @@
 
 ### Description
 
-It is small scss-mixins library for more adaptive. If you don't know what's css-lock, you can read article by Florens Verschelde [The math of CSS locks](https://fvsch.com/code/css-locks/). At the moment the library works only with unit `vw`. [**LIVE EXAMPLE**](https://raydmend.github.io/css-lock/)
+It is small scss-mixins library for more adaptive. If you don't know what's css-lock, you can read article by Florens Verschelde [The math of CSS locks](https://fvsch.com/code/css-locks/). At the moment the library works with `vw` and `vh`. [**LIVE EXAMPLE**](https://kostyabushuev.github.io/css-lock/)
 
 ### Get started!
 
