@@ -85,5 +85,25 @@
       </div>
     </div>
   </div>
+  <div class="container container-4">
+    <div class="four item">
+      <div class="four-item black-bg"></div>
+      <div class="description">
+        <span class="description-text">Change width relative to the height of window</span>
+        <div class="description-snippet">
+          <div class="description-snippet-sass">
+            <span class="orange">.item</span> {<br>
+            <span class="purple ml-10">@include</span> <span class="blue">cssLock</span>(<span class="green">'margin-bottom'</span>, <span>320</span>, <span class="orange">1000</span>, (<span class="orange">10</span> <span class="orange">30</span>));<br>}
+            <div class="description-snippet-sass-lang">SaSS</div>
+          </div>
+          <div class="description-snippet-css">
+            <span class="orange">.item</span> {<br>
+            <span class="ml-10">width:</span> <span class="blue">calc</span>(<span class="orange">2.9vw</span> + <span class="orange">0.5px</span>);<br>}
+            <div class="description-snippet-css-lang">CSS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

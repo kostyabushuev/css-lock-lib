@@ -188,3 +188,10 @@ span {
     }
   }
 }
+
+.four {
+  &-item {
+    height: 100px;
+    @include cssLockVH('w', 320, 1000, (50 300))
+  }
+}
