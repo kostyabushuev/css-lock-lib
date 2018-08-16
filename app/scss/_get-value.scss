@@ -1,3 +1,5 @@
+@import "_strip-unit";
+
 /*
 $min_prop - min value of property
 $max_prop - max value of property
@@ -5,7 +7,7 @@ $y1 - min width / height of screen
 $y2 - max width / height of screen
 */
 
-@function _getValue ($min_prop, $max_prop, $min_viewport, $max_viewport, $x:100vw) {
+@function _getValue ($min_prop, $max_prop, $min_viewport, $max_viewport, $x:100vw, $unit: 'px') {
   /*
   ** y = mx + b
   **
@@ -24,10 +26,23 @@ $y2 - max width / height of screen
   @if $min_prop == false {@return #{''}};
 
   // if min and max values is equal return the value
-  @if $min_prop == $max_prop {@return #{$min_prop + 'px'}};
+  @if $min_prop == $max_prop {@return _equals($min_prop)};
 
   $m: ($max_prop - $min_prop) / ($max_viewport - $min_viewport);
   $b: $min_prop - $m * $min_viewport;
 
   @return calc(#{$m * $x + ' + ' + $b + 'px'});
+}
+
+/* return truth result */
+@function _equals ($prop) {
+  $unit: unit($prop);
+
+  @if $unit == '' {
+    @return #{$prop + 'px'};
+  } @else {
+    $value: strip-unit($prop);
+
+    @return #{$value + $unit};
+  }
 }
