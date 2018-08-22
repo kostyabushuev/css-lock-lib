@@ -7,7 +7,7 @@ $y1 - min width / height of screen
 $y2 - max width / height of screen
 */
 
-@function _getValue ($min_prop, $max_prop, $min_viewport, $max_viewport, $x:100vw, $unit: 'px') {
+@function _getValue ($min_prop, $max_prop, $min_viewport, $max_viewport, $x:100vw) {
   /*
   ** y = mx + b
   **

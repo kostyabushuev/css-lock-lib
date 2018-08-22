@@ -58,3 +58,32 @@
 
   #{$property}: $value_1 + ' ' + $value_2 + ' ' + $value_3 + ' ' + $value_4;
 }
+
+/* css-lock, work with percents */
+@mixin cssLockPercent (
+  $property, $min, $max,
+  $values_1: false,
+  $values_2: (false false),
+  $values_3: (false false),
+  $values_4: (false false)) {
+
+  $property: _getNameOfProperty($property);
+
+  $v1_1: nth($values_1, 1);
+  $v1_2: nth($values_1, 2);
+  $value_1: _getValue($v1_1, $v1_2, $min, $max, 100%);
+
+  $v2_1: nth($values_2, 1);
+  $v2_2: nth($values_2, 2);
+  $value_2: _getValue($v2_1, $v2_2, $min, $max, 100%);
+
+  $v3_1: nth($values_3, 1);
+  $v3_2: nth($values_3, 2);
+  $value_3: _getValue($v3_1, $v3_2, $min, $max, 100%);
+
+  $v4_1: nth($values_4, 1);
+  $v4_2: nth($values_4, 2);
+  $value_4: _getValue($v4_1, $v4_2, $min, $max, 100%);
+
+  #{$property}: $value_1 + ' ' + $value_2 + ' ' + $value_3 + ' ' + $value_4;
+}
